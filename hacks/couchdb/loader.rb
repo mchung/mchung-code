@@ -27,7 +27,7 @@ if $0 == __FILE__
   end
   server = Couch::Server.new("localhost", "5984")
   q.queries.each do |qry| 
-    sha1 = Digest::SHA1.hexdigest(qry.to_s + rand(100))
-    server.put("/searchlogs/#{sha1}", qry.to_s)
+    sha1 = Digest::SHA1.hexdigest("#{qry.to_json}#{rand 100}")
+    server.put("/searchlogs/#{sha1}", qry.to_json)
   end
 end

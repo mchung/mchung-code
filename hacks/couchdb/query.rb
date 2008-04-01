@@ -9,7 +9,7 @@ module DM
       self.click_url = clickUrl.strip
     end
     
-    def to_s
+    def to_json
       str =<<XML
 {"anon_id":"#{self.anon_id}", "query":"#{self.query}", "query_time":"#{self.query_time}", "item_rank":"#{self.item_rank}", "click_url":"#{self.click_url}"}
 XML

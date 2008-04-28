@@ -1,14 +1,14 @@
 /*
 Build instructions
 
-Either
+Lex
+  lex dingdong.l
+
+Yacc
   yacc -dv dingdong.y
-  gcc y.tab.c -ly -ll
-Or
-  LDFLAGS=-ll make simple
+  gcc y.tab.c -ly -ll -o dingdong
 */
-/*
-*/
+
 %token DING DONG DELL
 %%
 rhyme	:	sound place

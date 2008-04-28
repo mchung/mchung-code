@@ -1,8 +1,21 @@
+/*
+
+A calculator with support for variables and nested operations
+
+Build instructions
+
+  lex calc.l
+  yacc -dv calc.y
+  gcc y.tab.c -ly -ll -o calc
+  
+*/
+
 %token INTEGER VARIABLE 
 %left '+' '-' 
 %left '*' '/' 
  
 %{
+   #include "lex.yy.c"
    int sym[26]; 
 %} 
 
@@ -30,9 +43,6 @@ expr:
  
 %% 
 
-/*
-//#include "lex.yy.c"
- 
 int yyerror(char *s) { 
     printf("%s\n", s); 
     return 0; 
@@ -41,5 +51,4 @@ int yyerror(char *s) {
 int main(void) { 
     yyparse(); 
     return 0; 
-} 
-*/
+}

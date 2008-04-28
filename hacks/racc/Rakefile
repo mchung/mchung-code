@@ -1,0 +1,11 @@
+# rakefile...
+task :default => :test
+
+file 'item_parser.tab.rb' => 'item_parser.y.rb' do
+  sh 'racc item_parser.y.rb'
+end
+
+task :test => 'item_parser.tab.rb' do 
+  require 'rake/runtest'
+  Rake.run_tests 'item_test.rb'
+end

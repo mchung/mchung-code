@@ -1,7 +1,8 @@
 /*
   lex dingdong.l
 */
+
 %%
-"ding"	return (DING);
-"dong"	return (DONG);
-"dell"	return (DELL);
+"ding"	printf("got ding");//return (DING);
+"dong"	printf("got dong");//return (DONG);
+"dell"	printf("got dell");//return (DELL);

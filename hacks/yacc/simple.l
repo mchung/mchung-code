@@ -1,6 +1,11 @@
 /*
-lex simple.l
-gcc lex.yy.c -ll -o simple
+Build instructions
+
+Either
+  lex simple.l
+  gcc lex.yy.c -ll -o simple
+Or
+  LDFLAGS=-ll make simple
 */
 
 D	[0-9]

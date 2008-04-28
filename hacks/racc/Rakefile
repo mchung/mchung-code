@@ -9,3 +9,7 @@ task :test => 'item_parser.tab.rb' do
   require 'rake/runtest'
   Rake.run_tests 'item_test.rb'
 end
+
+task :clean do
+  sh 'rm -rf item_parser.tab.rb'
+end

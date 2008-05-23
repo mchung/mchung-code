@@ -8,4 +8,4 @@ sum = 0
 puts sum #233168
 
 # inject
-#puts (1...1000).inject(0) {|sum, n| n = 0 unless n%3==0 || n%5==0; sum +=n}
+# puts (1...1000).inject(0) {|sum, n| n = 0 unless n%3==0 || n%5==0; sum +=n}

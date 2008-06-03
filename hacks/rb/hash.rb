@@ -1,3 +1,13 @@
+# Marc Chung <mchung@gmail.com>
+# Overrides method_missing in Hash to provide simple lookups:
+#
+# a = {:bar => {:baz => {:foo => "yippee"}}}
+# a.bar.baz.foo # => "yippee"
+# b = {:bar => {:skaz => {:sfoo => "groovy"}}}
+# a.bar.skaz?.foo # => nil
+#
+# See test case for more examples
+#
 class Hash
   def method_missing(lookup, *args)
     str_key = lookup.to_s
